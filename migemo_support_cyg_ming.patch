@@ -1,0 +1,24 @@
+diff --git a/src/Make_cyg_ming.mak b/src/Make_cyg_ming.mak
+index 62585e9..12ac178 100644
+--- a/src/Make_cyg_ming.mak
++++ b/src/Make_cyg_ming.mak
+@@ -68,6 +68,8 @@ CSCOPE=yes
+ NETBEANS=$(GUI)
+ # Set to yes to enable inter process communication.
+ CHANNEL=$(GUI)
++# Support Migemo
++MIGEMO=no
+ 
+ 
+ # Link against the shared version of libstdc++ by default.  Set
+@@ -791,6 +793,10 @@ LIB += -lstdc++
+ endif
+ endif
+ 
++ifeq (yes, $(MIGEMO))
++DEFINES += -DDYNAMIC_MIGEMO
++endif
++
+ all: $(TARGET) vimrun.exe xxd/xxd.exe install.exe uninstal.exe GvimExt/gvimext.dll
+ 
+ vimrun.exe: vimrun.c
