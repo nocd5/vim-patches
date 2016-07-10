@@ -1,8 +1,8 @@
 diff --git a/src/gui_gtk_x11.c b/src/gui_gtk_x11.c
-index aa4137a..5462a86 100644
+index 39b918a..7cc2f82 100644
 --- a/src/gui_gtk_x11.c
 +++ b/src/gui_gtk_x11.c
-@@ -3524,6 +3524,29 @@ on_select_tab(
+@@ -3549,6 +3549,29 @@ on_select_tab(
  }
  
  /*
@@ -32,7 +32,7 @@ index aa4137a..5462a86 100644
   * Show or hide the tabline.
   */
      void
-@@ -3609,6 +3632,9 @@ gui_mch_update_tabline(void)
+@@ -3634,6 +3657,9 @@ gui_mch_update_tabline(void)
  		    page,
  		    event_box,
  		    nr++);
@@ -42,7 +42,7 @@ index aa4137a..5462a86 100644
  	}
  
  	event_box = gtk_notebook_get_tab_label(GTK_NOTEBOOK(gui.tabline), page);
-@@ -4042,6 +4068,7 @@ gui_mch_init(void)
+@@ -4067,6 +4093,7 @@ gui_mch_init(void)
  # endif
  	gtk_container_add(GTK_CONTAINER(event_box), label);
  	gtk_notebook_set_tab_label(GTK_NOTEBOOK(gui.tabline), page, event_box);
@@ -50,7 +50,7 @@ index aa4137a..5462a86 100644
      }
  
  # if GTK_CHECK_VERSION(3,0,0)
-@@ -4052,6 +4079,9 @@ gui_mch_init(void)
+@@ -4077,6 +4104,9 @@ gui_mch_init(void)
  		       GTK_SIGNAL_FUNC(on_select_tab), NULL);
  # endif
  
@@ -61,10 +61,10 @@ index aa4137a..5462a86 100644
      tabline_menu = create_tabline_menu();
  # if GTK_CHECK_VERSION(3,0,0)
 diff --git a/src/gui_w32.c b/src/gui_w32.c
-index 7c32669..7c59194 100644
+index bc1f755..1ef74da 100644
 --- a/src/gui_w32.c
 +++ b/src/gui_w32.c
-@@ -8641,6 +8641,34 @@ initialise_tabline(void)
+@@ -8559,6 +8559,34 @@ initialise_tabline(void)
  # endif
  }
  
@@ -99,7 +99,7 @@ index 7c32669..7c59194 100644
      static LRESULT CALLBACK
  tabline_wndproc(
      HWND hwnd,
-@@ -8648,7 +8676,73 @@ tabline_wndproc(
+@@ -8566,7 +8594,73 @@ tabline_wndproc(
      WPARAM wParam,
      LPARAM lParam)
  {

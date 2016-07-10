@@ -1,8 +1,8 @@
 diff --git a/src/gui_w32.c b/src/gui_w32.c
-index 7c59194..e4bf67b 100644
+index 1ef74da..e932083 100644
 --- a/src/gui_w32.c
 +++ b/src/gui_w32.c
-@@ -8668,6 +8668,7 @@ GetTabFromPoint(
+@@ -8586,6 +8586,7 @@ GetTabFromPoint(
  
  static POINT	    s_pt = {0, 0};
  static HCURSOR      s_hCursor = NULL;
@@ -10,7 +10,7 @@ index 7c59194..e4bf67b 100644
  
      static LRESULT CALLBACK
  tabline_wndproc(
-@@ -8739,6 +8740,44 @@ tabline_wndproc(
+@@ -8657,6 +8658,43 @@ tabline_wndproc(
  		}
  		break;
  	    }
@@ -33,7 +33,6 @@ index 7c59194..e4bf67b 100644
 +		    pt.y = GET_Y_LPARAM(lParam);
 +		    if (GetTabFromPoint(hwnd, pt) == s_tp)
 +		    {
-+			BOOL bResult = FALSE;
 +			if (s_tp == curtab)
 +			{
 +			    if (first_tabpage->tp_next != NULL)

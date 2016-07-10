@@ -1,5 +1,5 @@
 diff --git a/src/Make_cyg_ming.mak b/src/Make_cyg_ming.mak
-index 86bbc3e..acde95f 100644
+index e0638ab..e0830b5 100644
 --- a/src/Make_cyg_ming.mak
 +++ b/src/Make_cyg_ming.mak
 @@ -72,6 +72,8 @@ CHANNEL=yes
@@ -11,7 +11,7 @@ index 86bbc3e..acde95f 100644
  
  
  # Link against the shared version of libstdc++ by default.  Set
-@@ -797,6 +799,10 @@ LIB += -lstdc++
+@@ -799,6 +801,10 @@ LIB += -lstdc++
  endif
  endif
  
