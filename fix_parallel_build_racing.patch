@@ -1,0 +1,17 @@
+diff --git a/src/Make_cyg_ming.mak b/src/Make_cyg_ming.mak
+index 9bc2419..8eacbe7 100644
+--- a/src/Make_cyg_ming.mak
++++ b/src/Make_cyg_ming.mak
+@@ -820,9 +820,11 @@ install.exe: dosinst.c
+ uninstal.exe: uninstal.c
+ 	$(CC) $(CFLAGS) -o uninstal.exe uninstal.c $(LIB)
+ 
+-$(TARGET): $(OUTDIR) $(OBJ)
++$(TARGET): $(OBJ)
+ 	$(CC) $(CFLAGS) $(LFLAGS) -o $@ $(OBJ) $(LIB) -lole32 -luuid $(LUA_LIB) $(MZSCHEME_LIBDIR) $(MZSCHEME_LIB) $(PYTHONLIB) $(PYTHON3LIB) $(RUBYLIB)
+ 
++$(OBJ): $(OUTDIR)
++
+ upx: exes
+ 	upx gvim.exe
+ 	upx vim.exe
