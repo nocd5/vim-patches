@@ -1,8 +1,8 @@
 diff --git a/src/Make_cyg_ming.mak b/src/Make_cyg_ming.mak
-index e0638ab..e0830b5 100644
+index b292720..2f3ec7b 100644
 --- a/src/Make_cyg_ming.mak
 +++ b/src/Make_cyg_ming.mak
-@@ -72,6 +72,8 @@ CHANNEL=yes
+@@ -73,6 +73,8 @@ CHANNEL=yes
  else
  CHANNEL=$(GUI)
  endif
@@ -11,8 +11,8 @@ index e0638ab..e0830b5 100644
  
  
  # Link against the shared version of libstdc++ by default.  Set
-@@ -799,6 +801,10 @@ LIB += -lstdc++
- endif
+@@ -828,6 +830,10 @@ ifeq (yes, $(STATIC_WINPTHREAD))
+ LIB += -Wl,-Bstatic -lwinpthread -Wl,-Bdynamic
  endif
  
 +ifeq (yes, $(MIGEMO))
